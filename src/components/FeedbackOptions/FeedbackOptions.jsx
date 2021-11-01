@@ -1,11 +1,11 @@
+
 import './FeedbackOptions.css';
 
-const FeedbackOptions = ({getFeedBackOnClick}) => {
+const FeedbackOptions = ({ options , getFeedBackOnClick }) => {
   return (
     <div className="btnWrapper">
-      <button onClick={(e) => {getFeedBackOnClick(e.target.className)}} className="good">Good</button>
-      <button onClick={(e) => {getFeedBackOnClick(e.target.className)}} className="neutral">Neutral</button>
-      <button onClick={(e) => {getFeedBackOnClick(e.target.className)}} className="bad">Bad</button>
+      {options.map(btn => <button type='button' key={btn} onClick={(e) => { getFeedBackOnClick(e.target.name) }} name={btn} className={btn}>{btn}</button>) }
+      
     </div>)
 }
  

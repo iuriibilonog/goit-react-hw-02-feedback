@@ -18,10 +18,10 @@ class App extends Component {
     bad: this.props.initialValueBad,
   };
 
-  getFeedBackOnClick = (btn) => {
+  getFeedBackOnClick = (name) => {
     this.setState((prevState) => {
       return {
-        [btn]: prevState[btn] + 1,
+        [name]: prevState[name] + 1,
       };
     });
   };
@@ -44,7 +44,10 @@ class App extends Component {
     return (
       <div className="App">
         <Section title="Please leave feedback">
-          <FeedbackOptions getFeedBackOnClick={this.getFeedBackOnClick} />
+          <FeedbackOptions
+            getFeedBackOnClick={this.getFeedBackOnClick}
+            options={["good", "neutral", "bad"]}
+          />
         </Section>
         <Section title="Statistics">
           {this.countTotalFeedback() === 0 ? (
