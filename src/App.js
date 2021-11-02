@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./App.css";
+import s from "./App.module.css";
 import FeedbackOptions from "./components/FeedbackOptions";
 import Statistics from "./components/Statistics";
 import Section from "./components/Section/";
@@ -42,7 +42,7 @@ class App extends Component {
   render() {
     const { good, neutral, bad } = this.state;
     return (
-      <div className="App">
+      <div className={s.App}>
         <Section title="Please leave feedback">
           <FeedbackOptions
             getFeedBackOnClick={this.getFeedBackOnClick}
